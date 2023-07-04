@@ -36,28 +36,28 @@ export class EmpregisterComponent implements OnInit {
   }
   registeremployee()
   {
-    localStorage.setItem('employeeRegistrationDetails',JSON.stringify(this.EmpRegisterForm.value))
-    this.registrationsuccess='Congratulations your now a job seeker';
+    // localStorage.setItem('employeeRegistrationDetails',JSON.stringify(this.EmpRegisterForm.value))
+    // this.registrationsuccess='Congratulations your now a job seeker';
     //       this.EmpRegisterForm.reset();
-    //console.log(this.EmpRegisterForm.value);
-    // this.seekerservice.employee_register(JSON.stringify(this.EmpRegisterForm.value)).subscribe(
-    //   (response:any)=>{
-    //     if(response.status===1){
-    //       this.registrationsuccess='Congratulations your now a job seeker';
-    //       this.EmpRegisterForm.reset();
-    //         setTimeout(() => { 
-    //           this.router.navigate(['/login/emp_login']);
-    //         }, 3000);
-    //     }else{
-    //       this.regisfail='You are already a job seeker';
-    //       console.log(this.regisfail);
-    //     }
-    //   },
-    //   (error)=>{
-    //       this.regisserver='Internal server error'; 
-    //   }
+    console.log(this.EmpRegisterForm.value);
+    this.seekerservice.employee_register(JSON.stringify(this.EmpRegisterForm.value)).subscribe(
+      (response:any)=>{
+        if(response.status===1){
+          this.registrationsuccess='Congratulations your now a job seeker';
+          this.EmpRegisterForm.reset();
+            setTimeout(() => { 
+              this.router.navigate(['/login/emp_login']);
+            }, 3000);
+        }else{
+          this.regisfail='You are already a job seeker';
+          console.log(this.regisfail);
+        }
+      },
+      (error)=>{
+          this.regisserver='Internal server error'; 
+      }
 
-    // );
+    );
   }
 
 }
