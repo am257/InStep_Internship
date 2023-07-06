@@ -13,18 +13,45 @@ export class TravelComponent implements OnInit {
     private activeroute: ActivatedRoute,
     private seekerservie: ForseekerService
   ) {}
+  selectedCity: string = '';
+  cities: string[] = [
+    'Mumbai',
+    'Delhi',
+    'Bangalore',
+    'Kolkata',
+    'Chennai',
+    'Hyderabad',
+  ];
+  selectEndingPoint: string = '';
+  endcity: string[] = [
+    'Mumbai',
+    'Delhi',
+    'Bangalore',
+    'Kolkata',
+    'Chennai',
+    'Hyderabad',
+  ];
+  // submitForm() {
+   
+
+  // }
   username: any;
   activeTab = 'travel';
 
-  travelName: string = '';
+
   travelEmail: string = '';
   claimType: string = '';
   claimAmount: number = 0;
+  Amount: number = 0;
+  Screenshot: string = '';
 
   submitTravelDetails() {
     console.log('Submitting travel details...');
-    console.log('Name:', this.travelName);
     console.log('Email:', this.travelEmail);
+    console.log('Amount:', this.Amount);
+    console.log('Screenshot:', this.Screenshot);
+    console.log('Selected City:', this.selectedCity);
+    console.log('endcity City:', this.endcity);
   }
 
   submitClaimDetails() {

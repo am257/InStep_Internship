@@ -33,44 +33,65 @@
 <!-- travel and claim section -->
 <div class="container">
     <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link" [class.active]="activeTab === 'travel'" (click)="activeTab = 'travel'">Travel</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [class.active]="activeTab === 'claim'" (click)="activeTab = 'claim'">Claim</a>
-      </li>
+        <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'travel'" (click)="activeTab = 'travel'">Travel</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'claim'" (click)="activeTab = 'claim'">Claim</a>
+        </li>
     </ul>
-  
+
     <div class="tab-content">
-      <div class="tab-pane" [class.show]="activeTab === 'travel'">
-        <h4>Travel Details</h4>
-        <form (ngSubmit)="submitTravelDetails()">
-          <div class="form-group">
-            <label for="name">Full Name:</label>
-            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="travelName" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="travelEmail" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-  
-      <div class="tab-pane" [class.show]="activeTab === 'claim'">
-        <h4>Claim Details</h4>
-        <form (ngSubmit)="submitClaimDetails()">
-          <div class="form-group">
-            <label for="claimType">Claim Type:</label>
-            <input type="text" class="form-control" id="claimType" name="claimType" [(ngModel)]="claimType" required>
-          </div>
-          <div class="form-group">
-            <label for="claimAmount">Claim Amount:</label>
-            <input type="number" class="form-control" id="claimAmount" name="claimAmount" [(ngModel)]="claimAmount" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
+        <div class="tab-pane" [class.show]="activeTab === 'travel'">
+            <h4>Travel Details</h4>
+            <form (ngSubmit)="submitTravelDetails()">
+                <div class="form-group">
+                    <label for="email">Student Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="travelEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="city" class="mr-3">Starting Point:</label>
+                    <select id="city" name="city" [(ngModel)]="selectedCity" class="form-control">
+                        <option value="">Select a city</option>
+                        <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="endcity" class="mr-3">Ending Point:</label>
+                    <select id="endcity" name="endcity" [(ngModel)]="selectEndingPoint" class="form-control">
+                        <option value="">Select a city</option>
+                        <option *ngFor="let endcity of cities" [value]="endcity">{{ endcity }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Amount</label>
+                    <input type="number" class="form-control" id="Amount" name="Amount" [(ngModel)]="Amount"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Ticket Screenshot</label>
+                    <input type="file" class="form-control" id="Screenshot" name="Screenshot" [(ngModel)]="Screenshot" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+        </div>
+
+        <div class="tab-pane" [class.show]="activeTab === 'claim'">
+            <h4>Claim Details</h4>
+            <form (ngSubmit)="submitClaimDetails()">
+                <div class="form-group">
+                    <label for="claimType">Claim Type:</label>
+                    <input type="text" class="form-control" id="claimType" name="claimType" [(ngModel)]="claimType"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="claimAmount">Claim Amount:</label>
+                    <input type="number" class="form-control" id="claimAmount" name="claimAmount"
+                        [(ngModel)]="claimAmount" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
-  </div>
-  
+</div>
