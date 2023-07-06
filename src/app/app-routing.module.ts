@@ -17,6 +17,7 @@ import {PostjobComponent} from './recruiter/postjob/postjob.component';
 import { RecruiterregisterComponent } from './Auth/regis/recruiterregister/recruiterregister.component';
 import {EditprofileComponent} from './seeker/editprofile/editprofile.component';
 import {SearchComponent} from './seeker/search/search.component';
+import { TravelComponent } from './travel/travel.component';
 const routes: Routes = [
   {path:'',redirectTo:'login/emp_login',pathMatch:'full'}, 
   //for default pageload..
@@ -47,6 +48,9 @@ const routes: Routes = [
   },
   {
     path:'recruiter/postjob',component:PostjobComponent
+  },
+  {
+    path:'seeker/travel',component:TravelComponent
   }
   
 ];

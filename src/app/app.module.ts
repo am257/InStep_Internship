@@ -8,6 +8,7 @@ import {HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './Auth/login/login.component';
 import {ForseekerService} from './forseeker.service';
 import {ForrecruiterService} from './forrecruiter.service';
+import { TravelComponent } from './travel/travel.component';
 //import { SearchComponent } from './seeker/search/search.component';
 //import { EditprofileComponent } from './seeker/editprofile/editprofile.component';
 //import { PostjobComponent } from './recruiter/rdashboard/postjob/postjob.component';
@@ -28,6 +29,7 @@ import {ForrecruiterService} from './forrecruiter.service';
     NavbarComponent,
     routingComponents,
     LoginComponent,
+    TravelComponent,
    // SearchComponent,
     //EditprofileComponent,
     //PostjobComponent,
